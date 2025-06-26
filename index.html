@@ -5,13 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Heart Channeling</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="LogoHeartChanneling.jpg" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Quicksand', sans-serif;
       background: #ffe6f0;
@@ -22,8 +18,6 @@
 
     .hearts {
       position: fixed;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 100%;
       pointer-events: none;
@@ -33,33 +27,28 @@
 
     .heart {
       position: absolute;
-      font-size: 24px;
+      width: 20px;
+      height: 20px;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Heart_coraz%C3%B3n.svg/1024px-Heart_coraz%C3%B3n.svg.png') no-repeat center center;
+      background-size: contain;
       animation: fall 8s linear infinite;
-      opacity: 0.7;
-      z-index: 1;
+      opacity: 0.6;
     }
 
     @keyframes fall {
-      0% {
-        transform: translateY(-50px) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0;
-      }
+      0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
     }
 
     .container {
       position: relative;
       z-index: 2;
       max-width: 600px;
-      margin: 0 auto;
+      margin: 60px auto;
       background: rgba(255, 255, 255, 0.85);
       padding: 30px 20px;
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      margin-top: 50px;
     }
 
     .logo {
@@ -82,8 +71,8 @@
 
     .link {
       display: block;
-      margin: 10px auto;
-      padding: 15px 20px;
+      margin: 12px auto;
+      padding: 14px 20px;
       width: 80%;
       max-width: 300px;
       text-decoration: none;
@@ -107,44 +96,36 @@
 </head>
 <body>
 
-  <!-- 🌸 Pluie de cœurs -->
+  <!-- Pluie de cœurs -->
   <div class="hearts" id="hearts-container"></div>
 
-  <!-- 📦 Contenu principal -->
+  <!-- Contenu principal -->
   <div class="container">
     <img src="LogoHeartChanneling.jpg" alt="Logo Heart Channeling" class="logo" />
     <h1>Heart Channeling</h1>
-
     <div class="description">
-      Bienvenue sur ma page de liens 🌸<br />
-      Je partage des messages inspirants, des canalisations du cœur, et des contenus pour élever la vibration collective.
+      Ici vous trouverez des messages inspirants, des canalisations du cœur<br />
+      et des vibrations lumineuses pour éclairer votre chemin.
     </div>
 
     <a class="link" href="https://www.facebook.com/heartchanneling" target="_blank">📘 Facebook</a>
     <a class="link" href="https://www.youtube.com/@Heartchanneling1699" target="_blank">📺 YouTube</a>
-    <a class="link" href="mailto:heartchanneling@gmail.com">✉️ Me contacter</a>
+    <a class="link" href="https://www.instagram.com/heart_channeling" target="_blank">📸 Instagram</a>
+    <a class="link" href="https://www.tiktok.com/@heartchanneling" target="_blank">🎵 TikTok</a>
   </div>
 
   <footer>© 2025 Heart Channeling</footer>
 
-  <!-- 💖 Script de création aléatoire des cœurs -->
   <script>
     const heartContainer = document.getElementById("hearts-container");
-
     function createHeart() {
       const heart = document.createElement("div");
       heart.classList.add("heart");
-      heart.innerText = "💗"; // Emoji cœur
       heart.style.left = Math.random() * 100 + "vw";
       heart.style.animationDuration = 4 + Math.random() * 5 + "s";
-      heart.style.fontSize = (16 + Math.random() * 20) + "px";
       heartContainer.appendChild(heart);
-
-      setTimeout(() => {
-        heart.remove();
-      }, 10000);
+      setTimeout(() => heart.remove(), 10000);
     }
-
     setInterval(createHeart, 300);
   </script>
 
