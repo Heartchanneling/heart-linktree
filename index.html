@@ -5,17 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Heart Channeling</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="LogoHeartChanneling.jpg" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Quicksand', sans-serif;
-      background: #ffe6f0;
       overflow-x: hidden;
+      background: #ffe6f0;
       text-align: center;
       color: #333;
     }
 
+    /* 🎈 Fond animé (pluie de cœurs) */
     .hearts {
       position: fixed;
       width: 100%;
@@ -36,19 +41,26 @@
     }
 
     @keyframes fall {
-      0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
-      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
     }
 
     .container {
       position: relative;
       z-index: 2;
       max-width: 600px;
-      margin: 60px auto;
+      margin: 0 auto;
       background: rgba(255, 255, 255, 0.85);
       padding: 30px 20px;
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      margin-top: 50px;
     }
 
     .logo {
@@ -71,8 +83,8 @@
 
     .link {
       display: block;
-      margin: 12px auto;
-      padding: 14px 20px;
+      margin: 10px auto;
+      padding: 15px 20px;
       width: 80%;
       max-width: 300px;
       text-decoration: none;
@@ -96,13 +108,14 @@
 </head>
 <body>
 
-  <!-- Pluie de cœurs -->
+  <!-- 🌸 Pluie de cœurs -->
   <div class="hearts" id="hearts-container"></div>
 
-  <!-- Contenu principal -->
+  <!-- 📦 Contenu principal -->
   <div class="container">
     <img src="LogoHeartChanneling.jpg" alt="Logo Heart Channeling" class="logo" />
     <h1>Heart Channeling</h1>
+
     <div class="description">
       Ici vous trouverez des messages inspirants, des canalisations du cœur<br />
       et des vibrations lumineuses pour éclairer votre chemin.
@@ -112,12 +125,15 @@
     <a class="link" href="https://www.youtube.com/@Heartchanneling1699" target="_blank">📺 YouTube</a>
     <a class="link" href="https://www.instagram.com/heart_channeling" target="_blank">📸 Instagram</a>
     <a class="link" href="https://www.tiktok.com/@heartchanneling" target="_blank">🎵 TikTok</a>
+    <a class="link" href="mailto:heartchanneling@gmail.com">✉️ Me contacter</a>
   </div>
 
   <footer>© 2025 Heart Channeling</footer>
 
+  <!-- 💖 Script de création aléatoire des cœurs -->
   <script>
     const heartContainer = document.getElementById("hearts-container");
+
     function createHeart() {
       const heart = document.createElement("div");
       heart.classList.add("heart");
@@ -126,6 +142,7 @@
       heartContainer.appendChild(heart);
       setTimeout(() => heart.remove(), 10000);
     }
+
     setInterval(createHeart, 300);
   </script>
 
