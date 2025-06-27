@@ -13,6 +13,8 @@
       text-align: center;
       padding: 2rem;
       overflow-x: hidden;
+      position: relative;
+      z-index: 1;
     }
 
     h1 {
@@ -31,10 +33,12 @@
       gap: 1rem;
       max-width: 400px;
       margin: 0 auto;
+      z-index: 2;
+      position: relative;
     }
 
     .link {
-      background: #f48fb1; /* rose soutenu */
+      background-color: #f48fb1; /* fond rose soutenu */
       border: none;
       border-radius: 30px;
       padding: 1rem;
@@ -46,12 +50,14 @@
     }
 
     .link:hover {
-      background: #ec407a;
+      background-color: #ec407a;
       transform: scale(1.03);
     }
 
     .paypal-section {
       margin-top: 3rem;
+      z-index: 2;
+      position: relative;
     }
 
     .paypal-title {
@@ -63,6 +69,8 @@
       margin-top: 4rem;
       font-size: 0.9rem;
       color: #999;
+      position: relative;
+      z-index: 2;
     }
 
     /* 💖 Pluie de cœurs */
@@ -73,8 +81,9 @@
       height: 20px;
       background: #ec407a;
       transform: rotate(-45deg);
-      animation: fall 6s linear infinite;
+      animation: fall linear infinite;
       opacity: 0.8;
+      z-index: 0; /* Derrière le contenu mais visible */
     }
 
     .heart::before,
@@ -136,6 +145,7 @@
       heart.style.left = `${Math.random() * 100}vw`;
       heart.style.animationDuration = `${3 + Math.random() * 3}s`;
       heart.style.opacity = Math.random().toFixed(2);
+      heart.style.animationDelay = `${Math.random() * 5}s`;
       document.body.appendChild(heart);
     }
   </script>
