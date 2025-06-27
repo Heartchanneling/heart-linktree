@@ -12,6 +12,7 @@
       color: #4b2e83;
       text-align: center;
       padding: 2rem;
+      overflow-x: hidden;
     }
 
     h1 {
@@ -33,18 +34,19 @@
     }
 
     .link {
-      background: white;
-      border: 2px solid #d1b3ff;
+      background: #f48fb1; /* rose soutenu */
+      border: none;
       border-radius: 30px;
       padding: 1rem;
       text-decoration: none;
-      color: #4b2e83;
+      color: white;
       font-weight: bold;
+      font-size: 1rem;
       transition: background 0.3s ease, transform 0.2s ease;
     }
 
     .link:hover {
-      background: #f3e8ff;
+      background: #ec407a;
       transform: scale(1.03);
     }
 
@@ -62,6 +64,49 @@
       font-size: 0.9rem;
       color: #999;
     }
+
+    /* 💖 Pluie de cœurs */
+    .heart {
+      position: fixed;
+      top: -20px;
+      width: 20px;
+      height: 20px;
+      background: #ec407a;
+      transform: rotate(-45deg);
+      animation: fall 6s linear infinite;
+      opacity: 0.8;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ec407a;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 10px;
+      top: 0;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(-45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(-45deg);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -77,9 +122,22 @@
 
   <div class="paypal-section">
     <p class="paypal-title">Pour vos dons PayPal, c'est ici 👇</p>
-    <a class="link" href="https://www.paypal.me/tonlienpaypal" target="_blank">Faire un don</a>
+    <a class="link" href="https://www.paypal.com/paypalme/Heartchanneling" target="_blank">Faire un don</a>
   </div>
 
   <footer>Merci pour votre soutien 💜</footer>
+
+  <!-- Pluie de cœurs générée dynamiquement -->
+  <script>
+    const heartCount = 30;
+    for (let i = 0; i < heartCount; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = `${Math.random() * 100}vw`;
+      heart.style.animationDuration = `${3 + Math.random() * 3}s`;
+      heart.style.opacity = Math.random().toFixed(2);
+      document.body.appendChild(heart);
+    }
+  </script>
 </body>
 </html>
