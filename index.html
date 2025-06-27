@@ -14,12 +14,11 @@
       padding: 2rem;
       overflow-x: hidden;
       position: relative;
-      z-index: 1;
     }
 
     .logo {
       height: 80px;
-      max-width: 200px;
+      max-width: 180px;
       display: block;
       margin: 0 auto 1.5rem;
       object-fit: contain;
@@ -81,7 +80,7 @@
       z-index: 2;
     }
 
-    /* 💖 Pluie de cœurs */
+    /* Pluie de cœurs */
     .heart {
       position: fixed;
       top: -20px;
@@ -92,6 +91,7 @@
       animation: fall linear infinite;
       opacity: 0.8;
       z-index: 0;
+      pointer-events: none;
     }
 
     .heart::before,
@@ -124,11 +124,63 @@
         opacity: 0;
       }
     }
+
+    /* ✅ Responsive adjustments */
+    @media (max-width: 768px) {
+      body {
+        padding: 1.5rem;
+      }
+
+      .logo {
+        height: 70px;
+        max-width: 160px;
+        margin-bottom: 1rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      p.subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .link {
+        padding: 0.9rem;
+        font-size: 0.95rem;
+      }
+
+      .paypal-title {
+        font-size: 1rem;
+      }
+
+      footer {
+        font-size: 0.8rem;
+        margin-top: 3rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        height: 60px;
+        max-width: 140px;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+
+      .link {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Logo centré -->
+  <!-- Logo -->
   <img src="LogoHeartChanneling.jpg" alt="Logo Heart Channeling" class="logo"/>
 
   <h1>Heart Channeling</h1>
